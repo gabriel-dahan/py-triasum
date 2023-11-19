@@ -1,9 +1,11 @@
+**But du jeu** : Il faut que la somme des chiffres présents aux sommets de chaque triangle (de 1 à 9 inclus, uniques) soit égale au nombre présent à l'intérieur du triangle. Un jeu à compléter ne donnera initialement que les nombres présents dans les triangles et laissera les sommets à déterminer.
 
 **_Hyp._** : Il y a 9 triangles contenant la somme des chiffres présents à leurs sommets. 
-    L'association des triangles forme un polygône à 7 côtés, il y a 9 chiffres distincts (0 est exclu).
+    L'association des triangles forme un polygône à 7 côtés, il y a 9 chiffres distincts.
 
 **_Rq._** : Un triangle ne pourra pas contenir un nombre plus grand que 9+8+7=24.
 
+*Voici le jeu, vide :*
 
 <div style="display: flex; justify-content: center;"><img src="./img.png" width="200px" ></img></div>
 
@@ -58,6 +60,8 @@ Il y a alors `9! = 362880` combinaisons à générer, on sait donc que le nombre
 
 *Implémentation* : `repartitions` dans `impl.py`
 
+*Remarques intéressantes* : La somme des valeurs des triangles ne pourra jamais être supérieure à 163 et jamais inférieure à 107.
+
 ### 2) Répartition erronée.
 
 **Approche** :
@@ -78,3 +82,7 @@ En plus du dictionnaire précédent, on intialise un nouveau dictionnaire listan
     8: (2, 4)
 }
 ```
+
+Le but ici est de calculer la somme des sommets non connus, à chaque fois à partir d'un nombre de départ (qu'on prendra systématiquement égal à 9, car c'est le plus facile à placer). Si pour toutes les positions, 9 ne peut pas être chiffre de départ, alors la grille est invalide. On essaiera de stocker la valeur problématique à chaque fois. 
+
+Intuition : récursivité ? Pour plus tard...

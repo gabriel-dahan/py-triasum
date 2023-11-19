@@ -47,5 +47,7 @@ def error_finder(repartition: List[int]) -> List[int]:
         ...
 
 if __name__ == '__main__':
-    from random import choice
-    print(choice(repartitions())) # Renvoie un jeu au hasard.
+    reps = repartitions() # Prend 2/3 secondes pour les calculs...
+    sums = [sum(rep) for rep in reps]
+    m, M = min(sums), max(sums)
+    print(m, M)
